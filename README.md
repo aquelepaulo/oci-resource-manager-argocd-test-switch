@@ -11,7 +11,7 @@ O cluster OKE e a Stack do Resource Manager já existem e estão fora do escopo 
 ## Roteiro da apresentação
 
 1. Publique este repositório em GitHub/GitLab **público**. Para Git privado, configure no Argo CD um Secret de repositório; não inclua token no manifesto.
-2. No Cloud Shell, substitua `__GIT_REPOSITORY_URL__` em `argocd/application.yaml.template` pela URL pública do repositório e aplique o manifesto. Aguarde `test-switch` ficar `Synced` e `Healthy`.
+2. No Cloud Shell, aplique `argocd/application.yaml`. Aguarde `test-switch` ficar `Synced` e `Healthy`.
 3. Obtenha o endereço público com `kubectl -n gitops-demo get svc test-switch` e execute `curl "http://<EXTERNAL-IP>/"`. O retorno é `TESTE 1`.
 5. Em `kubernetes/app/default.conf`, altere somente `TESTE 1` para `TESTE 2`; faça commit e push para `main`.
 6. No Argo CD, mostre o novo commit, a aplicação `OutOfSync` e a sincronização automática. Para não esperar o ciclo de reconciliação, use **Sync** na UI do Argo CD.
@@ -24,8 +24,7 @@ O `configMapGenerator` gera um novo nome de ConfigMap quando `default.conf` muda
 ## Aplicar a Application
 
 ```sh
-sed 's|__GIT_REPOSITORY_URL__|https://github.com/SEU_USUARIO/SEU_REPOSITORIO.git|' \
-  argocd/application.yaml.template | kubectl apply -f -
+kubectl apply -f argocd/application.yaml
 ```
 
 ## Fontes

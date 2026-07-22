@@ -6,7 +6,7 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: __GIT_REPOSITORY_URL__
+    repoURL: https://github.com/aquelepaulo/oci-resource-manager-argocd-test-switch.git
     targetRevision: main
     path: kubernetes/app
   destination:
