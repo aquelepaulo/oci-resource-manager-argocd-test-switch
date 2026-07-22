@@ -7,6 +7,6 @@ resources:
 configMapGenerator:
   - name: test-switch-nginx
     files:
-      - default.conf
+      - index.html
 generatorOptions:
-  disableNameSuffixHash: false
+  disableNameSuffixHash: true

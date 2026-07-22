@@ -4,7 +4,7 @@
 
 **0:45 — IaC.** Mostre a Stack do Resource Manager já concluída e explique que o OKE já existe para a demo. Este repositório começa no estado desejado da aplicação.
 
-**1:45 — Estado desejado.** Mostre `kubernetes/app/`: Deployment, Service e o arquivo `default.conf`. Destaque que o endpoint atualmente declara `TESTE 1`.
+**1:45 — Estado desejado.** Mostre `kubernetes/app/`: Deployment, Service e o arquivo `index.html`. Destaque que o endpoint atualmente declara `TESTE 1`.
 
 **2:30 — GitOps.** Mostre a `Application` do Argo CD: repositório, caminho `kubernetes/app`, `automated`, `prune` e `selfHeal`.
 
