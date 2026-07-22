@@ -20,8 +20,7 @@ spec:
             - containerPort: 8080
           volumeMounts:
             - name: nginx-config
-              mountPath: /etc/nginx/conf.d/default.conf
-              subPath: default.conf
+              mountPath: /etc/nginx/conf.d
               readOnly: true
           readinessProbe:
             httpGet:
